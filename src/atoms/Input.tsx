@@ -7,9 +7,11 @@ export default function Input({
 }: ComponentPropsWithRef<"input"> & { lable?: string; message?: string }) {
   return (
     <>
-      {lable ? <p>{lable}</p> : ""}
-      <input {...props} />
-      {message && <p>{message}</p>}
+      <span className="flex flex-col gap-1">
+        {lable ? <p className="text-xs items-start w-full">{lable}</p> : ""}
+        <input className="input" {...props} />
+        {message && <p>{message}</p>}
+      </span>
     </>
   );
 }
