@@ -17,12 +17,15 @@ export default function TaskForm() {
   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    if (!input.title || !input.date) return;
+
     const newTask: TaskProps = {
       id: Date.now() * Math.random(),
       title: input.title,
       description: input.description,
       priority: selected,
       date: input.date,
+      checked: false,
     };
 
     dispatch({ type: "ADD_TASK", payload: newTask });

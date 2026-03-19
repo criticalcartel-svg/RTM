@@ -7,7 +7,7 @@ import TaskProvider from "./contexts/TaskProvider";
 
 export default function App() {
   return (
-    <div className="bg-gray-50">
+    <div className="center bg-gray-50">
       <TaskProvider>
         <BrowserRouter>
           <Routes>

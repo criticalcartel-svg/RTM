@@ -11,8 +11,19 @@ export default function taskReducer(
     case "DELETE_TASK":
       return [...state.filter((t) => t.id !== action.payload)];
 
-    case "RESET":
-      return state;
+    case "UPDATE_TASK":
+      return [
+        ...state.filter((t) =>
+          t.id === action.payload.id ? action.payload : t,
+        ),
+      ];
+
+    case "TOGGLE_CHECKED":
+      return [
+        ...state.map((t) =>
+          t.id === action.payload ? { ...t, checked: !t.checked } : t,
+        ),
+      ];
 
     default:
       return state;

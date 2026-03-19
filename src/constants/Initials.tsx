@@ -12,6 +12,7 @@ export const initialState: InitialState = {
     description: "",
     date: "",
   },
-  selected: "",
+  selected: "low",
+  checked: true,
   tasks: [],
 };
